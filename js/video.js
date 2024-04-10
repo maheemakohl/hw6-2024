@@ -30,10 +30,22 @@ document.querySelector("#slower").addEventListener("click", function() {
 
 //event listener - the "Speed Up" button
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log("Speed Up");
 	// Increase the playback speed proportionally
 	video.playbackRate += (0.1 * (1 / video.playbackRate));
 	console.log("speed changed to: " + video.playbackRate);
+});
+
+document.querySelector("#skip").addEventListener("click", function() {
+	// Calculate the new time to skip to
+	var newTime = video.currentTime + 10;
+	// If new time exceeds the video duration, go back to the start of the video
+	if (newTime > video.duration) {
+		newTime = 0;
+	}
+	// Update the current time of the video
+	video.currentTime = newTime;
+	// Log the current location of the video
+	console.log("Current location: " + video.currentTime + " seconds");
 });
 
 //event listener - the "Mute" button
