@@ -29,10 +29,11 @@ document.querySelector("#slower").addEventListener("click", function() {
 });
 
 //event listener - the "Speed Up" button
-document.querySelector("#faster").addEventListener("click", function() {
-	// Increase the playback speed proportionally
-	video.playbackRate += (0.1 * (1 / video.playbackRate));
-	console.log("speed changed to: " + video.playbackRate);
+ document.querySelector("#faster").addEventListener("click", function() {
+        console.log("Speed Up");
+        // Increase the playback speed proportionally
+        video.playbackRate += 0.1 * (1 / video.playbackRate);
+        console.log("New speed: " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
@@ -65,12 +66,12 @@ muteButton.addEventListener("click", function() {
 //event listener - the volume slider
 var volumeSlider = document.querySelector("#slider");
 volumeSlider.addEventListener("input", function() {
-    // Set the volume of the video based on the slider value
-    video.volume = volumeSlider.value / 100;
-    // Update volume information in the console log
-    console.log("Volume changed to: " + volumeSlider.value + "%");
-    // Update volume information in the HTML
-    document.getElementById("volume").textContent = volumeSlider.value + "%";
+	// Set the volume of the video based on the slider value
+        video.volume = volumeSlider.value / 100;
+        // Update volume information in the console log
+        console.log("Volume: " + volumeSlider.value + "%");
+        // Update volume information in the HTML
+        document.getElementById("volume").textContent = volumeSlider.value + "%";
 });
 
 //event listener - the "Old School" button
