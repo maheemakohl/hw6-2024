@@ -72,13 +72,17 @@ muteButton.addEventListener("click", function() {
 
 //event listener - the volume slider
 var volumeSlider = document.querySelector("#slider");
+var volumeDisplay = document.querySelector("#volume");
+
 volumeSlider.addEventListener("input", function() {
-	// Set the volume of the video based on the slider value
-        video.volume = volumeSlider.value / 100;
-        // Update volume information in the console log
-        console.log("Volume: " + volumeSlider.value + "%");
-        // Update volume information in the HTML
-        document.getElementById("volume").textContent = volumeSlider.value + "%";
+    // Set the volume of the video based on the slider value
+    video.volume = volumeSlider.value / 100;
+    
+    // Update volume information in the console log
+    console.log("Volume changed to: " + volumeSlider.value + "%");
+    
+    // Update volume information in the HTML
+    volumeDisplay.textContent = volumeSlider.value + "%";
 });
 
 //event listener - the "Old School" button
