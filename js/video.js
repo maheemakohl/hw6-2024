@@ -7,6 +7,13 @@ window.addEventListener("load", function() {
 	video.loop = false
 	console.log('auto play is set to ' + video.autoplay)
 	console.log('loop is set to ' + video.loop)
+
+	// Get the initial value of the volume slider
+	var initialVolume = volumeSlider.value;
+
+	// Set default volume based on the slider value
+	video.volume = initialVolume / 100;
+	volumeDisplay.textContent = initialVolume + "%";
 });
 
 //event listeners - play and pause buttons
