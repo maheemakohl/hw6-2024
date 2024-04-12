@@ -36,11 +36,10 @@ document.querySelector("#slower").addEventListener("click", function() {
 });
 
 //event listener - the "Speed Up" button
- document.querySelector("#faster").addEventListener("click", function() {
-        console.log("Speed Up");
-        // Increase the playback speed proportionally
-        video.playbackRate += 0.1;
-        console.log("New speed: " + video.playbackRate);
+document.querySelector("#faster").addEventListener("click", function() {
+	// Increase the playback speed proportionally
+	video.playbackRate += 0.1;
+	console.log("speed changed to: " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
@@ -84,6 +83,7 @@ volumeSlider.addEventListener("input", function() {
     // Update volume information in the HTML
     volumeDisplay.textContent = volumeSlider.value + "%";
 });
+
 
 //event listener - the "Old School" button
 document.querySelector("#vintage").addEventListener("click", function() {
